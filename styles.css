@@ -1,0 +1,17 @@
+body {
+    display: flex;
+}
+
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    width: 800px;
+    height: 800px;
+}
+
+box {
+    display: flex;
+    height: 50px;
+    width: 50px;
+}

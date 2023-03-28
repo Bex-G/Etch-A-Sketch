@@ -1,18 +1,44 @@
 body {
     height: 100vh;
     width: 100vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px;
 }
 
 button {
     height: 50px;
+    margin-right: 50px;
+    font-size: medium;
+}
+
+h2 {
+    color: white;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+.header {
+    flex: auto;
+    width: 100%;
+    background-color: #1F2937;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
 }
 
 #container {
     display: flex;
     flex: none;
     flex-wrap: wrap;
+    margin-top: 50px;
     width: 1600px;
     height: 1600px;
+}
+
+.pad {
+    display: flex;
+    justify-content: center;
 }
 
 box {

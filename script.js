@@ -1,5 +1,11 @@
 const container = document.querySelector('#container');
 
+container.addEventListener('click', () => {
+    startSketchPad();
+});
+
+function startSketchPad() {
+
 for (i = 0; i < 256; i++) {
     const box = document.createElement('box')
     const boxContent = document.createTextNode('\u00A0')
@@ -11,7 +17,7 @@ for (i = 0; i < 256; i++) {
     box.addEventListener('mouseover', (e) => {
         e.target.style.background = 'black';
     })
-};
+}};
 
 function clearSketchpad() {
     container.innerHTML = '';
@@ -19,17 +25,20 @@ function clearSketchpad() {
 
 function newSketchpad(n) {   
 
-    for (i = 0; i < n*n; i++) {
-        const box = document.createElement('box')
-        const boxContent = document.createTextNode('\u00A0')
+    container.addEventListener('click', () => {
 
-        box.appendChild(boxContent);
-        container.appendChild(box);
+        for (i = 0; i < n*n; i++) {
+            const box = document.createElement('box')
+            const boxContent = document.createTextNode('\u00A0')
 
-        box.addEventListener('mouseover', (e) => {
-            e.target.style.background = 'black';
-        })
-    }
+            box.appendChild(boxContent);
+            container.appendChild(box);
+
+            box.addEventListener('mouseover', (e) => {
+                e.target.style.background = 'black';
+            })
+        }
+    })
 };
 
 const button = document.querySelector('button');

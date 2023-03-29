@@ -1,39 +1,24 @@
 body {
-    height: 100vh;
-    width: 100vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0px;
 }
 
 button {
     height: 50px;
+    width: 30vw;
     margin-right: 50px;
     font-size: medium;
 }
 
-h2 {
-    color: white;
-    margin-left: 50px;
-    margin-right: auto;
-}
-
 .header {
-    flex: auto;
+    display: flex;
     width: 100%;
     background-color: #1F2937;
     padding-top: 10px;
     padding-bottom: 10px;
     display: inline-flex;
     align-items: center;
-}
-
-#container {
-    display: flex;
-    flex: none;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    width: 1600px;
-    height: 1600px;
+    justify-content: center;
 }
 
 .pad {
@@ -41,9 +26,12 @@ h2 {
     justify-content: center;
 }
 
-box {
+#container {
     display: flex;
-    flex: auto;
-    height: 100px;
-    width: 100px;
+    flex: none;
+    flex-wrap: wrap;
+    height: 1600px;
+    width: 1600px;
+    margin-top: 50px;
+    border: 1px solid;
 }

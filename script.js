@@ -4,8 +4,7 @@ for (i = 0; i < 16 * 16; i++) {
     const box = document.createElement('box')
     const boxContent = document.createTextNode('\u00A0')
     
-    box.style.height = '6.25%';
-    box.style.width = '6.25%';
+    box.style.flexBasis = '6.25%';
     
     box.appendChild(boxContent);
     container.appendChild(box);

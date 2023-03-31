@@ -7,8 +7,9 @@ body {
 
 button {
     height: 50px;
-    width: 30vw;
+    width: auto;
     font-size: x-large;
+    margin-right: 20px;
 }
 
 .header {

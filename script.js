@@ -1,5 +1,11 @@
 const container = document.querySelector('#container');
 
+function draw(box) {
+    box.addEventListener('mouseover', (e) => {
+        e.target.style.background = 'black';
+    })
+};
+
 for (i = 0; i < 16 * 16; i++) {
     const box = document.createElement('box')
     const boxContent = document.createTextNode('\u00A0')
@@ -10,10 +16,7 @@ for (i = 0; i < 16 * 16; i++) {
     box.appendChild(boxContent);
     container.appendChild(box);
 
-
-    box.addEventListener('mouseover', (e) => {
-        e.target.style.background = 'black';
-    })
+    draw(box);
 };
 
 function clearSketchpad() {
@@ -45,15 +48,13 @@ function newSketchpad(n) {
         box.appendChild(boxContent);
         container.appendChild(box);
 
-        box.addEventListener('mouseover', (e) => {
-            e.target.style.background = 'black';
-        })
+        draw(box);
     }
 };
 
-const button = document.querySelector('button');
+const newSketchpadButton = document.querySelector('#newSketchpadButton');
 
-button.addEventListener('click', () => {
+newSketchpadButton.addEventListener('click', () => {
 
     clearSketchpad();
 
@@ -64,4 +65,53 @@ button.addEventListener('click', () => {
         newSketchpad(n);
     }
     newSketchpad(n);
-});
+    }
+);
+
+function getRandomColor() {
+
+    let maxVal = 0xFFFFFF;
+    let randomNumber = Math.random() * maxVal;
+    randomNumber = Math.floor(randomNumber);
+    randomNumber = randomNumber.toString(16);
+    let randomColor = randomNumber.padStart(6, 0);
+    return `#${randomColor.toUpperCase()}`;
+};
+
+function drawColor(box) {
+    box.addEventListener('mouseover', (e) => {
+        e.target.style.background = getRandomColor();
+    })
+};
+
+function colorSketchpad(n) {   
+
+    for (i = 0; i < n*n; i++) {
+        const box = document.createElement('box')
+        const boxContent = document.createTextNode('\u00A0')
+        
+        box.style.height = findPixelPercentage(n)
+        box.style.width = findPixelPercentage(n)
+
+        box.appendChild(boxContent);
+        container.appendChild(box);
+
+        drawColor(box);
+    }
+};
+
+const colorButton = document.querySelector('#colorButton');
+
+colorButton.addEventListener('click', () => {
+
+    clearSketchpad();
+
+    let n = parseInt(prompt("How many pixels would you like on either side?"));
+    
+    if (n > 100 || n < 16) {
+        let n = parseInt(prompt("Sorry, please choose a number between 16 and less than 100."));
+        colorSketchpad(n);
+    }
+    colorSketchpad(n);
+    }
+);

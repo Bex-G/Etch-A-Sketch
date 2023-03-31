@@ -6,6 +6,8 @@ function draw(box) {
     })
 };
 
+//Creates default 16x16 sketchpad that draws in black.
+
 for (i = 0; i < 16 * 16; i++) {
     const box = document.createElement('box')
     const boxContent = document.createTextNode('\u00A0')
@@ -67,6 +69,8 @@ newSketchpadButton.addEventListener('click', () => {
     newSketchpad(n);
     }
 );
+
+//The following functions enable the user to draw on a new sketchpad in randomly generated colors.
 
 function getRandomColor() {
 

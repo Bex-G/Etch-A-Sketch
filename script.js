@@ -4,7 +4,8 @@ for (i = 0; i < 16 * 16; i++) {
     const box = document.createElement('box')
     const boxContent = document.createTextNode('\u00A0')
     
-    box.style.flexBasis = '6.25%';
+    box.style.height = '6.25%';
+    box.style.width = '6.25%';
     
     box.appendChild(boxContent);
     container.appendChild(box);
@@ -27,7 +28,7 @@ function formatAsPercentage(n) {
     }).format(n / 100);
 }
 
-function findFlexBasis(n) {
+function findPixelPercentage(n) {
     let pixelsPerRow = 100 / n;
     return formatAsPercentage(pixelsPerRow);
 }
@@ -38,7 +39,8 @@ function newSketchpad(n) {
         const box = document.createElement('box')
         const boxContent = document.createTextNode('\u00A0')
         
-        box.style.flexBasis = findFlexBasis(n);
+        box.style.height = findPixelPercentage(n)
+        box.style.width = findPixelPercentage(n)
 
         box.appendChild(boxContent);
         container.appendChild(box);
@@ -57,8 +59,8 @@ button.addEventListener('click', () => {
 
     let n = parseInt(prompt("How many pixels would you like on either side?"));
     
-    if (n > 100) {
-        let n = parseInt(prompt("Sorry, please choose a number that is less than 100."));
+    if (n > 100 || n < 16) {
+        let n = parseInt(prompt("Sorry, please choose a number between 16 and less than 100."));
         newSketchpad(n);
     }
     newSketchpad(n);

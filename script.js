@@ -63,7 +63,7 @@ newSketchpadButton.addEventListener('click', () => {
     let n = parseInt(prompt("How many pixels would you like on either side?"));
     
     if (n > 100 || n < 16) {
-        let n = parseInt(prompt("Sorry, please choose a number between 16 and less than 100."));
+        let n = parseInt(prompt("Sorry, please choose a number between 16 and 100."));
         newSketchpad(n);
     }
     newSketchpad(n);
@@ -113,7 +113,7 @@ colorButton.addEventListener('click', () => {
     let n = parseInt(prompt("How many pixels would you like on either side?"));
     
     if (n > 100 || n < 16) {
-        let n = parseInt(prompt("Sorry, please choose a number between 16 and less than 100."));
+        let n = parseInt(prompt("Sorry, please choose a number between 16 and 100."));
         colorSketchpad(n);
     }
     colorSketchpad(n);
